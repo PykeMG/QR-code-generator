@@ -14,6 +14,10 @@ function App() {
   const generateQR =() => {
     setQrGenerated(true)
   }
+  const resetQr = () => {
+    setLink('')
+    setQrGenerated(false)
+  }
 
   return (
     <main className='flex flex-col h-screen w-screen items-center justify-center bg-[#111729] relative'>
@@ -30,7 +34,7 @@ function App() {
           </div>
         </section>
       }
-      {qrGenerated &&  <GeneratedQR link={link}/>}
+      {qrGenerated &&  <GeneratedQR link={link} reset={resetQr}/>}     
       </section>
     </main>
   )
